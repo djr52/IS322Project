@@ -36,6 +36,7 @@ function renderCards (results){
 
 renderCards(mockDatabase);
 
+//Used to sort items within the mock database
 function orderBy(sortValue) {
     var sortedResults = (sortValue === 'title') ?
         mockDatabase.sort(function (a, b) {
@@ -54,27 +55,26 @@ function orderBy(sortValue) {
         });
     renderCards(sortedResults);
 }
-// Change events trigger after the value of a form input changes
 document.querySelector('#orderBy').addEventListener('change', function(event){
-    // Event is the JavaScript event that transpired, in our change a CHANGE event.
-    // Target is the element it was performed on, useful for when the event targets
-    // multiple elements.
-    // Value has the name implies is the current value of the input element, if there is one
-    orderBy(event.target.value);
+    var value = event.target.value;
+    orderBy(value);
 });
+
+
+//Used to filter items within the mock database
 function togglePrice(showPrice) {
-    // If showPublished is TRUE, only display published results
-    // Filter will only inclue objects that return TRUE from it's query
-    var filteredResults = mockDatabase.filter(function (result) {
-        // If showPublished is TRUE, always show.
-        // Otherweise only show if published is TRUE
-        return showPrice || result.price;
+    var filteredResults = (showPrice === 'below30') ?
+        mockDatabase.filter(function(result){
+            return result.price < 30;
+        }) :
+        mockDatabase.filter(function(result){
+            return result.price > 30;
+
     });
+
     renderCards(filteredResults);
 }
-// Change events trigger after the value of a form input changes
 document.querySelector('#filters').addEventListener('change', function(event){
-    // in this case value is a string that we need to convert to a boolean
     var value = event.target.value;
     togglePrice(value);
 });
