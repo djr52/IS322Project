@@ -36,7 +36,6 @@ function renderCards (results){
 
 renderCards(mockDatabase);
 
-//Used to sort items within the mock database
 function orderBy(sortValue) {
     var sortedResults = (sortValue === 'title') ?
         mockDatabase.sort(function (a, b) {
@@ -56,12 +55,11 @@ function orderBy(sortValue) {
     renderCards(sortedResults);
 }
 document.querySelector('#orderBy').addEventListener('change', function(event){
-    var value = event.target.value;
-    orderBy(value);
+
+    orderBy(event.target.value);
 });
 
 
-//Used to filter items within the mock database
 function togglePrice(showPrice) {
     var filteredResults = (showPrice === 'below30') ?
         mockDatabase.filter(function(result){
@@ -74,6 +72,7 @@ function togglePrice(showPrice) {
 
     renderCards(filteredResults);
 }
+// Change events trigger after the value of a form input changes
 document.querySelector('#filters').addEventListener('change', function(event){
     var value = event.target.value;
     togglePrice(value);
