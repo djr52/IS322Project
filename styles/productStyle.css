@@ -2,7 +2,7 @@ body{
     display: flex;
 }
 .app-container{
-    width: 1024px;
+    width: 1200px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -20,8 +20,8 @@ body{
     flex-wrap: wrap;
 }
 img{
-    max-width: 50%;
-    height: auto;
+    height: 100%;
+    width: 100%
 }
 .card{
     flex: 0 0 300px;
@@ -30,6 +30,9 @@ img{
     margin: 5px;
     justify-content: center;
     align-items: center;
+}
+.card-body{
+    border-top: black 10px;
 }
 @media only screen and (max-width: 1199px) {
     .app-container {
@@ -62,5 +65,8 @@ img{
     #card-container .card {
         height: 50px;
         flex-basis: 100%;
+    }
+    img{
+        display: none;
     }
 }
