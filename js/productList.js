@@ -21,7 +21,7 @@ function renderCards (results){
 
 
         return '<div class="card">' + '<img id="productImg" src="" class="card-img-top" alt="">' +'<div class="card-body"><h5 class="card-title">' + result.title + '</h5><p class="card-text">'
-            + result.price + '</p></div></div>';
+            + '$' + result.price + '</p></div></div>';
     });
 
     cardRows.forEach(function (card, index) {
