@@ -48,8 +48,11 @@ img{
     }
 
     #card-container .card {
-        flex-basis: 330px;
-        height: 330px;
+        flex-basis: 300px;
+        height: 300px;
+    }
+    #card-container .card img {
+        height: 65%;
     }
 }
 @media only screen and (max-width: 749px) {
@@ -63,7 +66,7 @@ img{
     }
 
     #card-container .card {
-        height: 50px;
+        height: 75px;
         flex-basis: 100%;
     }
     img{

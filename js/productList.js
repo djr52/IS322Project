@@ -24,8 +24,6 @@ function renderCards (results){
             + result.price + '</p></div></div>';
     });
 
-    //document.getElementById("#productImg").setAttribute('alt', results._id);
-
     cardRows.forEach(function (card, index) {
 
         listBody.innerHTML += card;
