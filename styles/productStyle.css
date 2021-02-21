@@ -19,9 +19,12 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+img{
+    max-width: 50%;
+    height: auto;
+}
 .card{
-    height: 195px;
-    flex: 0 0 195px;
+    flex: 0 0 300px;
     background-color: white;
     border: 3px solid #333;
     margin: 5px;
@@ -30,7 +33,6 @@ body{
 }
 @media only screen and (max-width: 1199px) {
     .app-container {
-        flex-direction: column;
         width: 900px;
     }
 
@@ -38,6 +40,7 @@ body{
 
 @media only screen and (min-width: 750px) and (max-width: 1000px) {
     .app-container {
+        flex-direction: column;
         width: 720px;
     }
 
